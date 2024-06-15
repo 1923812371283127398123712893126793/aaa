@@ -2,21 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>wait for redirect</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript">
-        // Function to redirect to the script URL with a special Tampermonkey header
-        function installOrUpdateScript() {
-            var scriptURL = 'https://gist.githubusercontent.com/1923812371283127398123712893126793/5e1e993ba6444fcb00454cac126bb04c/raw/672d4e07045974967b7aad36fb233100ff784de9/tampermonkey.js';
-            var tampermonkeyURL = 'https://tampermonkey.net/scripts.php?ext=dhdg&updateURL=' + encodeURIComponent(scriptURL);
-            window.location.href = tampermonkeyURL;
-        }
-
-        // Call the function immediately to trigger the installation/update
-        installOrUpdateScript();
-    </script>
+    <title>Install or Update Tampermonkey Script</title>
 </head>
 <body>
-    <p>If you are not redirected automatically, follow this <a href="javascript:installOrUpdateScript()">link to install or update the script</a>.</p>
+    <p>You will be redirected to install or update the Tampermonkey script. If not, <a id="tm-link" href="#">click here to install or update the script</a>.</p>
+    <script type="text/javascript">
+        // The URL of the Tampermonkey script
+        var scriptURL = 'https://gist.githubusercontent.com/1923812371283127398123712893126793/5e1e993ba6444fcb00454cac126bb04c/raw/672d4e07045974967b7aad36fb233100ff784de9/tampermonkey.js';
+
+        // Set the href attribute of the link to the script URL
+        document.getElementById('tm-link').href = scriptURL;
+
+        // Redirect the browser to the script URL
+        window.location.href = scriptURL;
+    </script>
 </body>
 </html>
