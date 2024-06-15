@@ -2,14 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Install Tampermonkey Script</title>
-    <meta http-equiv="refresh" content="0; url=https://gist.githubusercontent.com/1923812371283127398123712893126793/5e1e993ba6444fcb00454cac126bb04c/raw/672d4e07045974967b7aad36fb233100ff784de9/tampermonkey.js">
+    <title>wait for redirect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript">
-        // In case the meta refresh doesn't work, use JavaScript to redirect
-        window.location.href = "https://gist.githubusercontent.com/1923812371283127398123712893126793/5e1e993ba6444fcb00454cac126bb04c/raw/672d4e07045974967b7aad36fb233100ff784de9/tampermonkey.js";
+        // Function to redirect to the script URL with a special Tampermonkey header
+        function installOrUpdateScript() {
+            var scriptURL = 'https://gist.githubusercontent.com/1923812371283127398123712893126793/5e1e993ba6444fcb00454cac126bb04c/raw/672d4e07045974967b7aad36fb233100ff784de9/tampermonkey.js';
+            var tampermonkeyURL = 'https://tampermonkey.net/scripts.php?ext=dhdg&updateURL=' + encodeURIComponent(scriptURL);
+            window.location.href = tampermonkeyURL;
+        }
+
+        // Call the function immediately to trigger the installation/update
+        installOrUpdateScript();
     </script>
 </head>
 <body>
-    <p>If you are not redirected automatically, follow this <a href="https://gist.githubusercontent.com/1923812371283127398123712893126793/5e1e993ba6444fcb00454cac126bb04c/raw/672d4e07045974967b7aad36fb233100ff784de9/tampermonkey.js">link to install the script</a>.</p>
+    <p>If you are not redirected automatically, follow this <a href="javascript:installOrUpdateScript()">link to install or update the script</a>.</p>
 </body>
 </html>
