@@ -2,23 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Install or Update Tampermonkey Script</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserScript Installer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        .script-item {
+            background: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .script-item h2 {
+            margin: 0 0 10px;
+        }
+        .install-link {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h1>Install or Update Tampermonkey Script</h1>
-    <p>You need to click the link below to install or update the Tampermonkey script:</p>
-    <a href="https://gist.githubusercontent.com/1923812371283127398123712893126793/5e1e993ba6444fcb00454cac126bb04c/raw/672d4e07045974967b7aad36fb233100ff784de9/tampermonkey.js" id="tm-link">Click here to install or update the script</a>
-    <script type="text/javascript">
-        // Function to prompt the user to install the script
-        function promptInstall() {
-            var scriptURL = 'https://gist.githubusercontent.com/1923812371283127398123712893126793/5e1e993ba6444fcb00454cac126bb04c/raw/672d4e07045974967b7aad36fb233100ff784de9/tampermonkey.js';
-            document.getElementById('tm-link').href = scriptURL;
-            // Optionally, automatically open the link
-            window.open(scriptURL, '_blank');
-        }
+    <h1>UserScript Installer</h1>
+    <div id="script-list"></div>
 
-        // Call the function immediately
-        promptInstall();
+    <script>
+        const scripts = [
+            {
+                id: 1,
+                name: 'Bypass Key System',
+                url: 'https://gist.githubusercontent.com/1923812371283127398123712893126793/5e1e993ba6444fcb00454cac126bb04c/raw/672d4e07045974967b7aad36fb233100ff784de9/tampermonkey.js'
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const scriptList = document.getElementById('script-list');
+            scripts.forEach(script => {
+                const scriptItem = document.createElement('div');
+                scriptItem.className = 'script-item';
+                scriptItem.innerHTML = `
+                    <h2>${script.name}</h2>
+                    <a class="install-link" href="${script.url}" target="_blank">Install Script</a>
+                `;
+                scriptList.appendChild(scriptItem);
+            });
+        });
     </script>
 </body>
 </html>
