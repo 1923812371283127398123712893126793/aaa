@@ -5,16 +5,20 @@
     <title>Install or Update Tampermonkey Script</title>
 </head>
 <body>
-    <p>You will be redirected to install or update the Tampermonkey script. If not, <a id="tm-link" href="#">click here to install or update the script</a>.</p>
+    <h1>Install or Update Tampermonkey Script</h1>
+    <p>You need to click the link below to install or update the Tampermonkey script:</p>
+    <a href="https://gist.githubusercontent.com/1923812371283127398123712893126793/5e1e993ba6444fcb00454cac126bb04c/raw/672d4e07045974967b7aad36fb233100ff784de9/tampermonkey.js" id="tm-link">Click here to install or update the script</a>
     <script type="text/javascript">
-        // The URL of the Tampermonkey script
-        var scriptURL = 'https://gist.githubusercontent.com/1923812371283127398123712893126793/5e1e993ba6444fcb00454cac126bb04c/raw/672d4e07045974967b7aad36fb233100ff784de9/tampermonkey.js';
+        // Function to prompt the user to install the script
+        function promptInstall() {
+            var scriptURL = 'https://gist.githubusercontent.com/1923812371283127398123712893126793/5e1e993ba6444fcb00454cac126bb04c/raw/672d4e07045974967b7aad36fb233100ff784de9/tampermonkey.js';
+            document.getElementById('tm-link').href = scriptURL;
+            // Optionally, automatically open the link
+            window.open(scriptURL, '_blank');
+        }
 
-        // Set the href attribute of the link to the script URL
-        document.getElementById('tm-link').href = scriptURL;
-
-        // Redirect the browser to the script URL
-        window.location.href = scriptURL;
+        // Call the function immediately
+        promptInstall();
     </script>
 </body>
 </html>
