@@ -5,7 +5,7 @@ Description: Allows you to chat with other people who run the script unfiltered 
 Instuctions: Join game, Run script, Click button next to chat bar to toggle.
 ]]
 
-Key = "o"
+Key = ">"
 
 
 Chars = {
