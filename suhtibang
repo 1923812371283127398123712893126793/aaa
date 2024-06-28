@@ -4,7 +4,7 @@ Game: Games that use LegacyChatService (Prison life, Rate my avatar)
 Description: Allows you to chat with other people who run the script unfiltered and privately.
 Instuctions: Join game, Run script, Click button next to chat bar to toggle.
 ]]
-
+print("this isnt made by me i found it on my archives.")
 Key = "͘"
 
 
